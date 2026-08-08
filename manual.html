@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spydy — User Manual & Setup Guide</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕷️</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        spider: {
+                            red: '#ff0f43',
+                            darkBg: '#09080b',
+                            cardBg: 'rgba(18, 16, 23, 0.75)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #09080b;
+            color: #f3f4f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 15, 67, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glass-panel {
+            background: rgba(18, 16, 24, 0.75);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+        }
+
+        .text-gradient-red {
+            background: linear-gradient(135deg, #ffffff 0%, #ff4d6d 50%, #ff0f43 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative flex flex-col justify-between overflow-x-hidden">
+
+    <div class="ambient-glow"></div>
+
+    <!-- Header -->
+    <header class="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between z-50 relative">
+        <a href="index.html" class="flex items-center space-x-3.5 group">
+            <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-red-600 via-spider-red to-pink-500 flex items-center justify-center shadow-lg shadow-red-900/40 border border-red-400/30 group-hover:scale-105 transition transform">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-2 5.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm4 0c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z"/>
+                </svg>
+            </div>
+            <span class="font-heading text-2xl font-black tracking-tight text-white group-hover:text-red-400 transition">Spydy<span class="text-spider-red">.</span></span>
+        </a>
+
+        <a href="index.html" class="text-sm font-semibold text-gray-300 hover:text-white transition flex items-center">
+            ← Back to Home
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-4xl mx-auto px-6 py-10 z-10 relative">
+        
+        <div class="text-center mb-12">
+            <span class="text-xs font-mono bg-spider-red/20 text-spider-red font-bold px-3 py-1 rounded-full border border-spider-red/30">User Manual & FAQs</span>
+            <h1 class="font-heading text-4xl sm:text-5xl font-black text-white mt-4 mb-3">How to Use Spydy</h1>
+            <p class="text-gray-400 text-sm max-w-xl mx-auto">Everything you need to know about setting up and enjoying your Spydy desktop reminder app.</p>
+        </div>
+
+        <div class="space-y-8">
+            
+            <!-- Quick Installation -->
+            <div class="glass-panel p-8 rounded-3xl">
+                <h2 class="font-heading text-xl font-bold text-white mb-4 flex items-center">
+                    <span class="w-8 h-8 rounded-xl bg-red-500/20 text-spider-red flex items-center justify-center mr-3 font-mono text-sm">01</span>
+                    Quick Installation
+                </h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-black/40 border border-white/10 p-5 rounded-2xl">
+                        <h3 class="font-bold text-white mb-2 flex items-center">🍎 For macOS Users</h3>
+                        <ol class="list-decimal list-inside space-y-1.5 text-gray-300 text-xs">
+                            <li>Download <code class="text-red-400">SpydyReminder.dmg</code>.</li>
+                            <li>Open the file and drag Spydy to your Applications folder.</li>
+                            <li>If macOS shows a security alert, go to <strong>System Settings > Privacy & Security</strong> and click <strong>Open Anyway</strong>.</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-black/40 border border-white/10 p-5 rounded-2xl">
+                        <h3 class="font-bold text-white mb-2 flex items-center">🪟 For Windows Users</h3>
+                        <ol class="list-decimal list-inside space-y-1.5 text-gray-300 text-xs">
+                            <li>Download <code class="text-cyan-400">SpydyReminder-Setup.exe</code>.</li>
+                            <li>Double-click the installer.</li>
+                            <li>Spydy will launch automatically in your Windows System Tray!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Setting Reminders -->
+            <div class="glass-panel p-8 rounded-3xl">
+                <h2 class="font-heading text-xl font-bold text-white mb-4 flex items-center">
+                    <span class="w-8 h-8 rounded-xl bg-red-500/20 text-spider-red flex items-center justify-center mr-3 font-mono text-sm">02</span>
+                    Setting Reminders & Spider Suits
+                </h2>
+
+                <div class="space-y-3 text-xs text-gray-300">
+                    <p>Click the <strong>Spydy icon 🕷️</strong> in your Mac Menu Bar or Windows Taskbar to open the control panel.</p>
+                    
+                    <ul class="list-disc list-inside space-y-2 pl-2">
+                        <li><strong class="text-white">Custom Message & Presets:</strong> Type any message or click chips like 💧 Water, 👁️ Eye Rest, or 🧘 Stretch.</li>
+                        <li><strong class="text-white">Choose Your Suit:</strong> Pick between ❤️ Classic, 🖤 Miles Stealth, 💖 Gwen Pink, and 💛 Iron Gold.</li>
+                        <li><strong class="text-white">At Time mode:</strong> Schedule alerts at specific clock times (e.g., 08:30 AM).</li>
+                        <li><strong class="text-white">Repeat Every mode:</strong> Set interval timers (every 15m, 30m, or 1 hour).</li>
+                        <li><strong class="text-white">Snooze & Dismiss:</strong> When Spidey drops down, click <strong>✓ Done</strong> or <strong>⏰ Snooze 5m</strong>. Press <kbd class="bg-white/10 px-1.5 py-0.5 rounded text-white font-mono">ESC</kbd> anytime to close.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Support -->
+            <div class="glass-panel p-8 rounded-3xl text-center">
+                <h2 class="font-heading text-2xl font-bold text-white mb-2">Need any help or have feedback?</h2>
+                <p class="text-xs text-gray-400 mb-5">Have questions or feature suggestions? Send a message on Instagram!</p>
+                
+                <a href="https://www.instagram.com/abhinavjangraa/" target="_blank" class="inline-flex items-center bg-gradient-to-r from-red-600 via-spider-red to-pink-600 hover:from-red-500 text-white font-heading font-extrabold text-xs px-6 py-3 rounded-2xl shadow-lg transition transform hover:scale-105">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    Contact @abhinavjangraa on Instagram
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-white/10 bg-black/60 py-8 px-6 backdrop-blur-xl relative z-10 text-center text-xs text-gray-500">
+        Spydy Reminder © 2026. Built with ❤️ for Mac & Windows.
+    </footer>
+
+</body>
+</html>
